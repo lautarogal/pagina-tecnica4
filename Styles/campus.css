@@ -1,0 +1,234 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Encode Sans Condensed';
+}
+ 
+ 
+body{
+    font-family: Arial, sans-serif;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 77, 1) 51%, rgba(3, 0, 48, 1) 100%);
+    color: white;
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    
+}
+ 
+.info{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+    transform: translateY(-70px);
+}
+.info img{
+    width: 400px;
+    height: 550px; 
+    filter: brightness(0) invert(1);
+    display: block;
+    padding-top: 150px;
+ 
+}
+ 
+#link-action{
+    background: rgba(27, 27, 27, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    box-shadow: 0px 5px 20px rgba(65, 65, 65, 0.8);
+    
+}
+ 
+.typing{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    animation:
+        escribir 3s steps(19) infinite alternate,
+        cursor .7s infinite;
+}
+ 
+.cursor{
+    animation: parpadear .7s infinite;
+}
+ 
+ 
+.box{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    gap: 80px;
+}
+ 
+.box-img{
+    width: 600px;
+    height: 400px;
+    flex-shrink: 0;
+}
+ 
+.box-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ 
+ 
+}
+ 
+.box-title{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+ 
+    transform: translateY(-40px);
+}
+ 
+.box-title h2{
+    margin-bottom: 20px;
+    font-size: 42px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+ 
+ 
+}
+ 
+.box-title p{
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+}
+.box-title-end{
+    align-items: flex-end;
+    text-align: right;
+}
+ 
+@keyframes parpadear{
+    50%{
+        opacity: 0;
+    }
+}
+h1{
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+ 
+/* =========================================================
+   RESPONSIVE
+   El bloque de arriba es el diseño original de escritorio
+   y queda intacto. De acá para abajo solo se ajustan
+   tamaños para notebook y celular, sin cambiar la estética.
+   ========================================================= */
+ 
+/* ---- Notebook (pantallas de 13"-15", ~992px a 1400px) ---- */
+@media (max-width: 1400px){
+ 
+    .container{
+        height: auto;
+        min-height: 90vh;
+        padding-top: 100px;
+    }
+ 
+    .info img{
+        width: 300px;
+        height: 412px;
+        padding-top: 110px;
+    }
+ 
+    .box{
+        padding: 0 50px;
+        gap: 40px;
+    }
+ 
+    .box-img{
+        width: 420px;
+        height: 300px;
+    }
+ 
+    .box-title{
+        min-width: 0;
+    }
+ 
+    .box-title h2{
+        font-size: 32px;
+    }
+ 
+    .box-title p{
+        max-width: 100%;
+        font-size: 16px;
+    }
+}
+ 
+/* ---- Celular (hasta 768px) ---- */
+@media (max-width: 768px){
+ 
+    .container{
+        min-height: auto;
+        padding: 20px 20px 40px;
+    }
+ 
+    .info{
+        width: 100%;
+        transform: none;
+    }
+ 
+    .info img{
+        width: 220px;
+        height: 302px;
+        padding-top: 0;
+    }
+ 
+    section .box{
+        flex-direction: column;
+        min-height: auto;
+        padding: 0 20px;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    #link-action{
+        box-shadow:none;
+        background-color: white;
+    }
+
+    /* la imagen siempre arriba del texto, sin importar el orden del HTML */
+
+    .box-img{
+        order: -1;
+        width: 100%;
+        height: 220px;
+    }
+ 
+    .box-title{
+        transform: none;
+        align-items: center;
+        text-align: center;
+    }
+ 
+    .box-title h2{
+        font-size: 26px;
+    }
+ 
+    .box-title p{
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: left;
+    }
+    
+}
+ 
